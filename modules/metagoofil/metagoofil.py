@@ -1,5 +1,5 @@
 from discovery import googlesearch
-from extractors import *
+from extractors import*
 import urllib
 import os
 import downloader
