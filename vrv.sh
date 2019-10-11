@@ -83,7 +83,7 @@ nslookup $TARGET
 echo "nslooking up finished"
 echo ""
 echo "scanning with nmap (if not run maybe not installed in your OS)"
-nmap -v -O $TARGET
+nmap -v -O -oN output.txt $TARGET
 echo "scanning with nmap finished"
 echo ""
 echo "starting the harvester for gathering email and subdomain information"
@@ -96,7 +96,7 @@ echo "metagoofil finished"
 echo ""
 echo ""
 dig -x $TARGET
-python modules/sublist3r/sublist3r.py --domain $TARGET
+python modules/sublist3r/sublist3r.py --output output.txt --domain $TARGET
 echo ""
 echo "╔════════════════════════════════════════════════════════════════╗"
 echo "║                    Got It :v wkwkwkwkwk                        ║"              
