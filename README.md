@@ -11,3 +11,10 @@ Machine learning model incorporates various classifiers that will be later used 
 Later, both the models will be combined to generate the final output to tell whether the URL under consideration is a Phishing URL or a Genuine one.
 
 ## Overall System Architecture
+
+<img width="718" alt="architecture" src="https://user-images.githubusercontent.com/54947999/66774467-3c66d280-eedf-11e9-9ca5-29e81361f7ab.png">
+
+## Tools Used
+### Metagoofil
+
+## Working Of The Tool
