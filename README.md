@@ -18,3 +18,5 @@ Later, both the models will be combined to generate the final output to tell whe
 ### Metagoofil
 
 ## Working Of The Tool
+
+![flowchart](https://user-images.githubusercontent.com/54947999/66774657-b5fec080-eedf-11e9-866d-b4dfbbfacf35.png)
