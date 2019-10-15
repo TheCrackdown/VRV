@@ -48,11 +48,11 @@ VRV is part of The CrackDown project to detect general phishing pages.
 
 A machine learning model to identify phishing pages by looking at:
 
-HTML text - searching for brand name and signin keywords in HTML source code
+->HTML text - searching for brand name and signin keywords in HTML source code
 
-HTML structure - searching for submission forms and their attributes
+->HTML structure - searching for submission forms and their attributes
 
-IMAGE text - searching for texts directly from image
+->IMAGE text - searching for texts directly from image
 
 We apply tesseract (a Deep learning based OCR engine) to extract texts from images.
 
@@ -60,11 +60,11 @@ We also NLP analysis to filter and clean nonsense words.
 
 It supports:
 
-Directly detection of potential phishing pages
+->Directly detection of potential phishing pages
 
-A behavior-based model to investigate general phishing behaviors
+->A behavior-based model to investigate general phishing behaviors
 
-A machine-learning-based (RandomForest) to combine all the properties to make a final decision
+->A machine-learning-based (RandomForest) to combine all the properties to make a final decision
 
 ### Install OCR, NLTK and ML dependences
 bash install.sh
