@@ -18,7 +18,7 @@ Later, both the models will be combined to generate the final output to tell whe
 
 ## Welcome to VRV!
 
-VRV is part of SquatPhish project to detect general phishing pages.
+VRV is part of The CrackDown project to detect general phishing pages.
 
 VRV is a tool that will be used to tell whether the URL under consideration is a Phishing or a Non- Phishing one.
 
