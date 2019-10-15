@@ -76,10 +76,10 @@ It supports:
 
 ->A machine-learning-based (RandomForest) to combine all the properties to make a final decision
 
-### Install OCR, NLTK and ML dependences
+#### Install OCR, NLTK and ML dependences
 bash install.sh
 
-### Demo
+#### Demo
 Run the demo to get predictions of testing samples under test folder.
 
 1 is predicted as a phsihing page and 0 is predicted as a benign page.
@@ -106,5 +106,5 @@ Get feature vectors.
 
 python3 feature_extract.py
 
-### Disclaimer and Reference
+## Disclaimer and Reference
 This is a research prototype, use at your own risk.
