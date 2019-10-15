@@ -13,15 +13,24 @@ Later, both the models will be combined to generate the final output to tell whe
 ## Overall System Architecture
 <img width="718" alt="architecture" src="https://user-images.githubusercontent.com/54947999/66801089-7662c380-ef35-11e9-8e26-cfbcfe3fdc23.png">
 
-## Working Of Tools
+## Working Of Tool
+![flowchart](https://user-images.githubusercontent.com/54947999/66801143-ad38d980-ef35-11e9-9a61-79cdce3655b6.png)
 
+## Welcome to VRV!
 
+VRV is part of SquatPhish project to detect general phishing pages.
 
+VRV is a tool that will be used to tell whether the URL under consideration is a Phishing or a Non- Phishing one.
 
-Welcome to SquatPhish-phishing-detection!
+The tool will be working two models.
 
-SquatPhish-phishing-detection is part of SquatPhish project to detect general phishing pages.
+The first model follows the approach of using open source tools followed  by a second model which incorporates Machine Learning.
 
+Machine learning model incorporates various classifiers that will be later used to enhance the probability and accuracy of the tool.
+
+Later, both the models will be combined to generate the final output to tell whether the URL under consideration is a Phishing URL or a Genuine one.
+
+## Machine Learning Model
 A machine learning model to identify phishing pages by looking at:
 
 * HTML text - searching for brand name and signin keywords in HTML source code
@@ -39,12 +48,12 @@ It supports:
 - [x] A machine-learning-based (RandomForest) to combine all the properties to make a final decision
 
 
-## Install OCR, NLTK and ML dependences
+### Install OCR, NLTK and ML dependences
 ```
 bash install.sh
 ```
 
-## Demo
+### Demo
 
 Run the demo to get predictions of testing samples under test folder.
 
@@ -77,39 +86,6 @@ Get feature vectors.
 python3 feature_extract.py
 ```
 
-## API
-
-We provide a prediction API.
-```                                                                                                                                                               ketian@ketian
-usage: predict.py [-h] [-t HTML] [-i IMG]
-
-running analysis...
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -t HTML, --html HTML  A html source data to extract features
-  -i IMG, --img IMG     A image data to extract features
-
-```
-
-Example:
-
-```
-python3 predict.py  --img=./test/facebook-c.com..screen.png
-                    --html=./test/facebook-c.com..source.txt
-```
-
-
 ## Disclaimer and Reference
 
 This is a research prototype, use at your own risk.
-
-If you feel this tool is useful, cite the tool as :dog2: SquatPhish :dog2: is highly appreiciated.
-
-## Acknowledgement
-
-Core contributor: ke tian @ririhedou
-
-Thanks hang hu @0xorz for reproduction testing.
-
-Current version is 0.0.2, updated at June 14 2018
