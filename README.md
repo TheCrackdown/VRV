@@ -1,68 +1,27 @@
-# The CrackDown
+# Phish-Page-Detection
 
-## Introduction
-The Crackdown is basically a repository on GitHub which hosts tool VRV, our very own created tool to detect whether a given site is a phishing site or not. VRV integrates two models. The first model follows the approach of using open source tools followed  by a second model which incorporates Machine Learning.
+```
 
-## VRV
-VRV is a tool that will be used to tell whether the URL under consideration is a Phishing or a Non- Phishing one.
-The tool will be working two models.
-The first model follows the approach of using open source tools followed  by a second model which incorporates Machine Learning.
-Machine learning model incorporates various classifiers that will be later used to enhance the probability and accuracy of the tool.
-Later, both the models will be combined to generate the final output to tell whether the URL under consideration is a Phishing URL or a Genuine one.
+   _____                   _   _____  _     _     _
+  / ____|                 | | |  __ \| |   (_)   | |
+ | (___   __ _ _   _  __ _| |_| |__) | |__  _ ___| |__
+  \___ \ / _` | | | |/ _` | __|  ___/| '_ \| / __| '_ \
+  ____) | (_| | |_| | (_| | |_| |    | | | | \__ \ | | | - Detection
+ |_____/ \__, |\__,_|\__,_|\__|_|    |_| |_|_|___/_| |_|
+            | |
+            |_|
 
-## Overall System Architecture
+```
 
-<img width="718" alt="architecture" src="https://user-images.githubusercontent.com/54947999/66774467-3c66d280-eedf-11e9-9ca5-29e81361f7ab.png">
+Welcome to SquatPhish-phishing-detection!
 
-## Tools Used
-### Whois
-A whois Kali linux command is a utility as a part of the information gathering used in all of the Linux-based operating systems. this tool is part of information security assessment, and one of information gathering techniques.
-### NSLookup
-NSLookup is a network administr.ation command-line tool available in many computer operating systems for querying the Domain Name System (DNS) to obtain domain name or IP address mapping, or other DNS records
-### Sublist3R
-Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT. It helps penetration testers and bug hunters collect and gather subdomains for the domain they are targeting. Sublist3r enumerates subdomains using many search engines such as Google, Yahoo, Bing, Baidu, and Ask. Sublist3r also enumerates subdomains using Netcraft, Virustotal, ThreatCrowd, DNSdumpster, and ReverseDNS.
-Subbrute was integrated with Sublist3r to increase the possibility of finding more subdomains using bruteforce with an improved wordlist. The credit goes to TheRook who is the author of subbrute.
-### XSS
-XSStrike is a Cross Site Scripting detection suite equipped with four hand written parsers, an intelligent payload generator, a powerful fuzzing engine and an incredibly fast crawler.
-Instead of injecting payloads and checking it works like all the other tools do, XSStrike analyses the response with multiple parsers and then crafts payloads that are guaranteed to work by context analysis integrated with a fuzzing engine.
-### The Harvester
-The Harvester is a very simple, yet effective tool designed to be used in the early
-stages of a penetration test. Use it for open source intelligence gathering and
-helping to determine a company's external threat landscape on the internet.
-### Metagoofil
-Metagoofil is a tool for extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites.This information could be useful because you can get valid usernames, people names, for using later in bruteforce password attacks (vpn, ftp, webapps), the tool will also extracts interesting "paths" of the documents, where we can get shared resources names, server names, etc.
-### DNSRecon
-DNSRecon is a Python port of a Ruby script that I wrote to learn the language and about DNS in early 2007. This time I wanted to learn about Python and extend the functionality of the original tool and in the process re-learn how DNS works and how could it be used in the process of a security assessment and network troubleshooting.
-### Shodan
-Shodan is a search engine for Internet-connected devices. Google lets you search for websites, Shodan lets you search for devices. This library provides developers easy access to all of the data stored in Shodan in order to automate tasks and integrate into existing tools.
-### WPScan
-WPScan is a black box WordPress vulnerability scanner that can be used to scan remote WordPress installations to find security issues.
+SquatPhish-phishing-detection is part of SquatPhish project to detect general phishing pages.
 
-## Working Of The Tool
-
-![flowchart](https://user-images.githubusercontent.com/54947999/66774657-b5fec080-eedf-11e9-866d-b4dfbbfacf35.png)
-
-### Welcome to VRV!
-
-VRV is part of The CrackDown project to detect general phishing pages.
-
-VRV is a tool that will be used to tell whether the URL under consideration is a Phishing or a Non- Phishing one.
-The tool will be working two models.
-
-The first model follows the approach of using open source tools followed  by a second model which incorporates Machine Learning.
-
-Machine learning model incorporates various classifiers that will be later used to enhance the probability and accuracy of the tool.
-
-Later, both the models will be combined to generate the final output to tell whether the URL under consideration is a Phishing URL or a Genuine one.
-
-### Machine Learning Model
 A machine learning model to identify phishing pages by looking at:
 
-->HTML text - searching for brand name and signin keywords in HTML source code
-
-->HTML structure - searching for submission forms and their attributes
-
-->IMAGE text - searching for texts directly from image
+* HTML text - searching for brand name and signin keywords in HTML source code
+* HTML structure - searching for submission forms and their attributes
+* IMAGE text - searching for texts directly from image
 
 We apply tesseract (a Deep learning based OCR engine) to extract texts from images.
 
@@ -70,20 +29,23 @@ We also NLP analysis to filter and clean nonsense words.
 
 It supports:
 
-->Directly detection of potential phishing pages
+- [x] Directly detection of potential phishing pages
+- [x] A behavior-based model to investigate general phishing behaviors
+- [x] A machine-learning-based (RandomForest) to combine all the properties to make a final decision
 
-->A behavior-based model to investigate general phishing behaviors
 
-->A machine-learning-based (RandomForest) to combine all the properties to make a final decision
-
-#### Install OCR, NLTK and ML dependences
+## Install OCR, NLTK and ML dependences
+```
 bash install.sh
+```
 
-#### Demo
+## Demo
+
 Run the demo to get predictions of testing samples under test folder.
 
 1 is predicted as a phsihing page and 0 is predicted as a benign page.
 
+```
 python3 demo.py
 
 Prediction result:	 googlw.lt----1.0----[0.28993355726427317, 0.7100664427357269]
@@ -102,9 +64,47 @@ Prediction result:	 sewauk.org----1.0----[0.25669347640761164, 0.743306523592388
 
 Prediction result:	 100022538-facebook.com----0.0----[0.9193098619543378, 0.08069013804566202]
 
+```
+
 Get feature vectors.
 
+```
 python3 feature_extract.py
+```
+
+## API
+
+We provide a prediction API.
+```                                                                                                                                                               ketian@ketian
+usage: predict.py [-h] [-t HTML] [-i IMG]
+
+running analysis...
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t HTML, --html HTML  A html source data to extract features
+  -i IMG, --img IMG     A image data to extract features
+
+```
+
+Example:
+
+```
+python3 predict.py  --img=./test/facebook-c.com..screen.png
+                    --html=./test/facebook-c.com..source.txt
+```
+
 
 ## Disclaimer and Reference
+
 This is a research prototype, use at your own risk.
+
+If you feel this tool is useful, cite the tool as :dog2: SquatPhish :dog2: is highly appreiciated.
+
+## Acknowledgement
+
+Core contributor: ke tian @ririhedou
+
+Thanks hang hu @0xorz for reproduction testing.
+
+Current version is 0.0.2, updated at June 14 2018
