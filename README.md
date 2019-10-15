@@ -41,3 +41,13 @@ WPScan is a black box WordPress vulnerability scanner that can be used to scan r
 ## Working Of The Tool
 
 ![flowchart](https://user-images.githubusercontent.com/54947999/66774657-b5fec080-eedf-11e9-866d-b4dfbbfacf35.png)
+
+Welcome to VRV!
+
+VRV is part of The CrackDown project to detect general phishing pages.
+
+A machine learning model to identify phishing pages by looking at:
+
+->HTML text - searching for brand name and signin keywords in HTML source code
+->HTML structure - searching for submission forms and their attributes
+->IMAGE text - searching for texts directly from image
